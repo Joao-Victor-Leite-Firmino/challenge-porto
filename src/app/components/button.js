@@ -1,5 +1,4 @@
 'use client'
-
 import styled from 'styled-components'
 
 const Button = styled.button`
@@ -9,7 +8,7 @@ const Button = styled.button`
 export default function MeuBotao(props){
     return (
         <Button>
-            {props.name}
+            {props.text}
         </Button>
     )
 }
