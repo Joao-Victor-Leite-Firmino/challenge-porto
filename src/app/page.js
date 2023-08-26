@@ -1,6 +1,6 @@
 import BotaoAssist from "./components/Botaoassistencia";
 import BotaoHist from "./components/BotaoHistorico";
-import Titulo from "./components/titulo";
+import Titulo from "./components/Titulo";
 
 
 export default function Home() {
