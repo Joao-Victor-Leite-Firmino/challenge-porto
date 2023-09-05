@@ -4,27 +4,30 @@ import Image from 'next/image'
 
 
 const Button = styled.button`
-    background-color: #3A42FF;
-    color: white;
+    background-color: white;
+    color: black;
     font-weight: bold;
-    border: none;
-    width: 10em;
+    width: 100%;
     height: 4.5em;
     border-radius: 10px;
     display: flex;
     align-items: center;
+    justify-content: center;
 `
 
 export default function BotaoAssist(props){
+    console.log(props.src)
     return (
         <Button>
+            <div>
              <Image 
-             src = "/ferramentinha.svg"
+             src={props.src}
              width={25}
              height={25}
-             alt = "ferramentas"
+             alt={props.text}
              priority
              />
+             </div>
             <div>
             {props.text}
             </div>
