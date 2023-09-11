@@ -1,36 +1,73 @@
 'use client'
-import styled from 'styled-components'
-import Image from 'next/image'
+import React from 'react';
+import styled from 'styled-components';
 
 
 const Button = styled.button`
-    background-color: white;
-    color: black;
-    font-weight: bold;
-    width: 100%;
-    height: 4.5em;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-`
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  margin: 5px;
+  cursor: pointer;
+  width: 97%;
+  height: 7em
+`;
 
-export default function BotaoAssist(props){
-    console.log(props.src)
-    return (
-        <Button>
-            <div>
-             <Image 
-             src={props.src}
-             width={25}
-             height={25}
-             alt={props.text}
-             priority
-             />
-             </div>
-            <div>
-            {props.text}
-            </div>
+const ButtonImage = styled.img`
+  width: 40%;
+  height: 50px;
+  margin-bottom: 5px;
+`;
+
+function ButtonList() {
+  const buttons = [
+    {
+      text: 'Estava andando e parou',
+      imageSrc: 'caminhao.svg',
+    },
+    {
+      text: 'Problemas ao ligar',
+      imageSrc: 'carro-com-problemas-de-calor-1.svg',
+    },
+    {
+      text: 'Acabou a bateria',
+      imageSrc: 'bateria-de-carro-1.svg',
+    },
+    {
+        text: 'Furou o pneu',
+        imageSrc: 'pneu-furado-1.svg',
+    },
+    {
+        text: 'Preciso de um chaveiro',
+        imageSrc: 'chave-1.svg',
+    },
+    {
+        text: 'Acabou o combustível',
+        imageSrc: 'posto-de-gasolina-1.svg',
+    },
+    {
+        text: 'Acidentes',
+        imageSrc: 'triangulo-1.svg',
+    },
+    {
+        text: 'Problemas elétricos',
+        imageSrc: 'carro-eletrico-1.svg',
+    },
+  ];
+
+  return (
+    <div>
+      {buttons.map((button, index) => (
+        <Button key={index}>
+          <ButtonImage src={button.imageSrc} alt={button.text} />
+          {button.text}
         </Button>
-    )
+      ))}
+    </div>
+  );
 }
+
+export default ButtonList;
