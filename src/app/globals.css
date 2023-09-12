@@ -15,8 +15,21 @@ padding: 0;}
 }
 .h1{
     text-align: center;
+    font-size: 12px;
 }
 
 .titulo{
     margin-bottom: 1em;
+}
+
+.veiculos{
+    border: 1px solid;
+    border-radius: .5rem;
+    border-color: black;
+}
+
+.botao-azul{
+    display: flex;
+    justify-content: space-around ;
+    
 }
