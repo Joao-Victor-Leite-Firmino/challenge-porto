@@ -7,35 +7,33 @@ const Button = styled.button`
   display: flex;
   align-items: center;
   padding: 10px;
-  background-color: #1306A8;
+  background-color: #3A42FF;
+  border: none;
   color: white;
-  border-radius: 5px;
-  margin: 5px;
+  border-radius: 15px;
+  margin-left: 4.5em;
+  margin-bottom: 1.5em;
   cursor: pointer;
-  width: 97%;
-  height: 7em
+  width: 70%;
+  height: 5.5em;
+  text-decoration: none;
 `;
 
-const ButtonImage = styled.img`
-  width: 40%;
-  height: 50px;
-  margin-bottom: 5px;
-`;
 
 export default function BotaoChamada(props){
     return (
         <Button class="botao-azul">
         <div>
-             <Image 
-             src = {props.src}
-             width={25}
-             height={25}
+             <Image class="imagem__botao__azul"
+             src = "consertar 3.svg"
+             width={60}
+             height={50}
              alt = {Button.text}
              priority
              />
         </div>
         <div>
-            <h1>Solicitar assistência</h1>
+            <h2>Solicitar assistência</h2>
         </div>
         </Button>
     )
