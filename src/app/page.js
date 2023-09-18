@@ -1,6 +1,6 @@
-import BotaoChamada from '../components/BotaoChamada'
+import BotaoChamada from './components/BotaoChamada'
 import Link from 'next/link'
-import BotaoHist from '../components/BotaoHistorico'
+import BotaoHist from './components/BotaoHistorico'
 
 export default function Home() {
   return (
