@@ -4,13 +4,12 @@ import styled from 'styled-components';
 
 
 const Button = styled.button`
-
 align-items: center;
 text-align: center;
 background-color: white;
 color: black;
 cursor: pointer;
-width: 50%;
+width: 49.5%;
 height: 10em;
 `;
 

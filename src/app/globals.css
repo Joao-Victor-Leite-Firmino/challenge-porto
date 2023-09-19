@@ -34,6 +34,7 @@ padding: 0;}
     margin-left: 1.2em;
 }
 
+
 .carro{
     border: 1px solid;
     border-radius: .5rem;
@@ -48,7 +49,7 @@ padding: 0;}
     display: flex;
     flex-direction: row;
     align-content: space-between;
-    gap: 2.5em;
+    gap: 1em;
 }
 
 .paragrafo{
@@ -160,7 +161,7 @@ padding: 0;}
     padding-bottom: 2em;
 }
 
-.placa{
+.placa__acompanhamento{
     text-align: center;
     padding-bottom: 1em;
 }

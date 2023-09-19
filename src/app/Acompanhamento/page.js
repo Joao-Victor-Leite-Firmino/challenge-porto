@@ -17,7 +17,7 @@ export default function Acompanhamento() {
         <div class="selecao__lados">
         <img src='gps.png' alt='GPS'></img>
         </div>
-        <h2 class="placa">Placa do guincho</h2>
+        <h2 class="placa__acompanhamento">Placa do guincho</h2>
         <div class="identificador__guincho">
         <img src='License Plate.svg' alt='Placa do guincho'></img>
         </div>
