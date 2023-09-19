@@ -1,11 +1,10 @@
 'use client'
 import React from 'react';
 import Link from 'next/link';
-import BotaoSim from '../components/BotaoSim';
-import BotaoNao from '../components/BotaoNao';
+import SeletorImagem from '../components/SeletorFotos';
 
 
-export default function Conta_com_modificacoes() {
+export default function Fotos() {
     return(
         <div>
             <header class='cabecalho'>
@@ -13,17 +12,17 @@ export default function Conta_com_modificacoes() {
          <img class='logo' src="porto-seguro-logo (1).png" alt="Logo Porto Seguro"/>
         </Link>
         </header>
-        <div class="titulo__tem__modificacoes">
-        <h1>Modificações</h1>
-        <h2>Seu veículo conta com modificações?</h2>
+        <div class="titulo__fotos">
+        <h1>Selecione os lados possíveis:</h1>
         </div>
-        <div class="Botao__sim__nao">
-        <Link href="/Modificacoes">
-        <BotaoSim/>
+        <div class="selecao__lados">
+        <img src='Selecao lados.svg' alt='Seleção de lados'></img>
+        </div>
+        <div class="seletores__imagem">
+        <Link href="/Acompanhamento">
+        <SeletorImagem/>
         </Link>
-        <Link href="/Possivel_fotos">
-        <BotaoNao/>
-        </Link>
+        <SeletorImagem/>
         </div>
         <footer class="rodape">
         <p>Desenvolvido pelo grupo King of Code, 2023.</p>

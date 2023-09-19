@@ -5,7 +5,7 @@ import BotaoSim from '../components/BotaoSim';
 import BotaoNao from '../components/BotaoNao';
 
 
-export default function Conta_com_modificacoes() {
+export default function Possivel_fotos() {
     return(
         <div>
             <header class='cabecalho'>
@@ -14,16 +14,14 @@ export default function Conta_com_modificacoes() {
         </Link>
         </header>
         <div class="titulo__tem__modificacoes">
-        <h1>Modificações</h1>
-        <h2>Seu veículo conta com modificações?</h2>
+        <h1>Fotos do veículo:</h1>
+        <h2>É possível tirar fotos do veículo?</h2>
         </div>
         <div class="Botao__sim__nao">
-        <Link href="/Modificacoes">
+        <Link href="/Fotos">
         <BotaoSim/>
         </Link>
-        <Link href="/Possivel_fotos">
         <BotaoNao/>
-        </Link>
         </div>
         <footer class="rodape">
         <p>Desenvolvido pelo grupo King of Code, 2023.</p>

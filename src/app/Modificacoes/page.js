@@ -3,11 +3,11 @@ import React from 'react';
 import Link from 'next/link';
 import Modificacoes from '../components/BotaoModificacao';
 
-export default function conta_com_modificacoes() {
+export default function Pagina_modificacoes() {
   return (
     <div>
         <header class='cabecalho'>
-      <Link href="/Home">
+      <Link href="/">
         <img class='logo' src="porto-seguro-logo (1).png" alt="Logo Porto Seguro"/>
       </Link>
       </header>
@@ -16,7 +16,7 @@ export default function conta_com_modificacoes() {
       <h2>Qual é a modificação?</h2>
       </div>
       <div>
-    <Link href="/Possivel_foto">
+    <Link href="/Possivel_fotos">
     <Modificacoes/>
     </Link>
       </div>
