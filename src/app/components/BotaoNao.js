@@ -8,10 +8,9 @@ const Button = styled.button`
   color: white;
   border-radius: 15px;
   margin-top: 1em;
-  margin-left: 4.5em;
   margin-bottom: 1.5em;
   cursor: pointer;
-  width: 60%;
+  width: 150%;
   height: 3em;
   text-decoration: none;
   font-size: 20px;
@@ -21,7 +20,7 @@ export default function BotaoNao(){
     return (
         <Button>
             <div>
-            <p>Nao</p>
+            <p>Não</p>
             </div>
         </Button>
     )

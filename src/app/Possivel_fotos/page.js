@@ -21,7 +21,9 @@ export default function Possivel_fotos() {
         <Link href="/Fotos">
         <BotaoSim/>
         </Link>
+        <Link href="/Acompanhamento">
         <BotaoNao/>
+        </Link>
         </div>
         <footer class="rodape">
         <p>Desenvolvido pelo grupo King of Code, 2023.</p>

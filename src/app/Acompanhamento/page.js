@@ -12,7 +12,7 @@ export default function Acompanhamento() {
         </Link>
         </header>
         <div class="titulo__fotos">
-        <h1>Guincho indo ate você</h1>
+        <h1>Guincho está indo até você</h1>
         </div>
         <div class="selecao__lados">
         <img src='gps.png' alt='GPS'></img>

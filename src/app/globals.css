@@ -119,7 +119,9 @@ padding: 0;}
 .Botao__sim__nao{
     display: flex;
     flex-direction: row;
-    padding-right: 6em;
+    justify-content: center;
+    margin: auto;
+    gap: 6em;
     margin: 0em 0 13em 0;
 }
 
