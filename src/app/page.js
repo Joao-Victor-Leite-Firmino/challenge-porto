@@ -16,7 +16,7 @@ export default function Home() {
       <div class="veiculos">
         <div class="imagem__placa">
           <div class="carro">
-            <img src="carros 4.svg" alt="Carro"/>
+            <img src="truck 1.svg" alt="Carro"/>
           </div>
           <img class="placa" src="License Plate.svg" alt="Placa"/>
         </div>
@@ -32,7 +32,7 @@ export default function Home() {
     <div class="veiculos">
         <div class="imagem__placa">
           <div class="carro">
-            <img src="carros 4.svg" alt="Carro"/>
+            <img src="truck 1.svg" alt="Carro"/>
           </div>
           <img class="placa" src="License Plate.svg" alt="Placa"/>
         </div>

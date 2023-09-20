@@ -15,12 +15,24 @@ cursor: pointer;
 width: 97%;
 height: 7em;
 font-size: 22px;
+
+@media screen and (min-width: 1280px) {
+  width: 99%;
+  margin: auto;
+  height: 8em;
+}
 `;
 
 const ButtonImage = styled.img`
   width: 40%;
   height: 50px;
   margin-bottom: 5px;
+
+  @media screen and (min-width: 1280px) {
+    margin-left: 5em;
+    width: 40%;
+    height: 70px;
+  }
 `;
 
 function Modificacoes() {

@@ -16,8 +16,13 @@ const Button = styled.button`
     gap: 10px;
     padding: 10px;
     margin: 1em 5.2em;
-    font-size: 15px
-`
+    font-size: 15px;
+
+    @media screen and (min-width: 1280px) {
+        margin: 2em auto 2em auto;
+        width: 40%;
+      }
+`;
 
 export default function BotaoHist(props){
     return (

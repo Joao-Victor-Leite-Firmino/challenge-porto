@@ -17,6 +17,11 @@ const Button = styled.button`
   width: 70%;
   height: 5.5em;
   text-decoration: none;
+
+  @media screen and (min-width: 1280px) {
+    margin: 0 auto 2em auto;
+    width: 30%;
+  }
 `;
 
 

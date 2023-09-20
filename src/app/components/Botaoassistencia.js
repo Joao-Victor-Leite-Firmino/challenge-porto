@@ -13,13 +13,26 @@ const Button = styled.button`
   margin: 5px;
   cursor: pointer;
   width: 97%;
-  height: 7em
+  height: 7em;
+
+  @media screen and (min-width: 1280px) {
+    width: 99%;
+    margin: auto;
+    height: 7em;
+    font-size: 1.2em;
+  }
 `;
 
 const ButtonImage = styled.img`
   width: 40%;
   height: 50px;
   margin-bottom: 5px;
+
+  @media screen and (min-width: 1280px) {
+    margin-left: 5em;
+    width: 40%;
+    height: 70px;
+  }
 `;
 
 function ButtonList() {

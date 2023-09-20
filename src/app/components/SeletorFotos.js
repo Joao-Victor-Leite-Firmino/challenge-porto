@@ -11,6 +11,11 @@ color: black;
 cursor: pointer;
 width: 49.5%;
 height: 10em;
+
+@media screen and (min-width: 1280px) {
+  width: 30%;
+  height: 12em;
+}
 `;
 
 const ButtonImage = styled.img`
@@ -20,9 +25,6 @@ const ButtonImage = styled.img`
   display: block;
 `;
 
-const InputFile = styled.input`
-  display: none;
-`;
 
 function SeletorImagem() {
     const buttons = [
