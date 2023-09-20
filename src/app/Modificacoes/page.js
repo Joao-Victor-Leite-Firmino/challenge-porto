@@ -16,9 +16,7 @@ export default function Pagina_modificacoes() {
       <h2>Qual é a modificação?</h2>
       </div>
       <div>
-    <Link href="/Possivel_fotos">
     <Modificacoes/>
-    </Link>
       </div>
       <footer class="rodape">
       <p>Desenvolvido pelo grupo King of Code, 2023.</p>

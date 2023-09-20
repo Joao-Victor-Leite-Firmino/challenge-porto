@@ -27,44 +27,54 @@ function ButtonList() {
     {
       text: 'Estava andando e parou',
       imageSrc: 'caminhao.svg',
+      link: '/Conta_com_modificacoes',
     },
     {
       text: 'Problemas ao ligar',
       imageSrc: 'carro-com-problemas-de-calor-1.svg',
+      link: '/Conta_com_modificacoes',
     },
     {
       text: 'Acabou a bateria',
       imageSrc: 'bateria-de-carro-1.svg',
+      link: '/Conta_com_modificacoes',
     },
     {
         text: 'Furou o pneu',
         imageSrc: 'pneu-furado-1.svg',
+        link: '/Conta_com_modificacoes',
     },
     {
         text: 'Preciso de um chaveiro',
         imageSrc: 'chave-1.svg',
+        link: '/Conta_com_modificacoes',
     },
     {
         text: 'Acabou o combustível',
         imageSrc: 'posto-de-gasolina-1.svg',
+        link: '/Conta_com_modificacoes',
     },
     {
         text: 'Acidentes',
         imageSrc: 'triangulo-1.svg',
+        link: '/Conta_com_modificacoes',
     },
     {
         text: 'Problemas elétricos',
         imageSrc: 'carro-eletrico-1.svg',
+        link: '/Conta_com_modificacoes',
     },
   ];
 
   return (
     <div>
       {buttons.map((button, index) => (
-        <Button key={index}>
-          <ButtonImage src={button.imageSrc} alt={button.text} />
-          {button.text}
-        </Button>
+        <a key={index} href={button.link}>
+          <Button>
+            <ButtonImage src={button.imageSrc} alt={button.text} />
+            {button.text}
+          </Button>
+        </a>
       ))}
     </div>
   );

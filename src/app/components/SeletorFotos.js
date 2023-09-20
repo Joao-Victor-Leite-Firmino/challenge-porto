@@ -20,15 +20,21 @@ const ButtonImage = styled.img`
   display: block;
 `;
 
+const InputFile = styled.input`
+  display: none;
+`;
+
 function SeletorImagem() {
     const buttons = [
       {
         text: 'Seletor de imagem',
         imageSrc: 'gallery 1.svg',
+        link: '/Acompanhamento',
       },
       {
         text: 'Seletor de imagem',
         imageSrc: 'gallery 1.svg',
+        link: '/Acompanhamento',
       },
     ];
 
@@ -37,6 +43,7 @@ function SeletorImagem() {
       {buttons.map((button, index) => (
         <Button key={index}>
           <ButtonImage src={button.imageSrc} alt={button.text} />
+          <InputFile type="file" accept="image/*" />
         </Button>
       ))}
     </div>

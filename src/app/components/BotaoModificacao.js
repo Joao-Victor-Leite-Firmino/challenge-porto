@@ -28,24 +28,29 @@ function Modificacoes() {
       {
         text: 'Número de eixos',
         imageSrc: 'truck 1.svg',
+        link: '/Possivel_fotos',
       },
       {
         text: 'Carga',
         imageSrc: 'delivery-weighing 1.svg',
+        link: '/Possivel_fotos',
       },
       {
         text: 'Tipo de carga',
         imageSrc: 'parcel 1.svg',
+        link: '/Possivel_fotos',
       },
     ];
 
   return (
     <div>
       {buttons.map((button, index) => (
+        <a key={index} href={button.link}>
         <Button key={index}>
           <ButtonImage src={button.imageSrc} alt={button.text} />
           {button.text}
         </Button>
+        </a>
       ))}
     </div>
   );
