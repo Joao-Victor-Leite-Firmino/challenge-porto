@@ -19,9 +19,7 @@ export default function Fotos() {
         <img src='Selecao lados.svg' alt='Seleção de lados'></img>
         </div>
         <div class="seletores__imagem">
-        <Link href="/Acompanhamento">
         <SeletorImagem/>
-        </Link>
         <SeletorImagem/>
         </div>
         <footer class="rodape">

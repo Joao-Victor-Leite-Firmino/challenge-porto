@@ -41,10 +41,11 @@ function SeletorImagem() {
   return (
     <div>
       {buttons.map((button, index) => (
+        <a key={index} href={button.link}>
         <Button key={index}>
           <ButtonImage src={button.imageSrc} alt={button.text} />
-          <InputFile type="file" accept="image/*" />
         </Button>
+        </a>
       ))}
     </div>
   );
