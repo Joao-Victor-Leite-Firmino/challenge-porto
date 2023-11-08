@@ -8,7 +8,7 @@ export default function Acompanhamento() {
     return(
         <div>
             <header class='cabecalho'>
-        <Link href="/">
+        <Link href="/Home">
          <img class='logo' src="porto-seguro-logo (1).png" alt="Logo Porto Seguro"/>
         </Link>
         </header>
