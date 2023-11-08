@@ -13,6 +13,11 @@ export default function Problemas() {
       <h1 class="titulo">Que tipo de assistência você está procurando?</h1>
       </div>
       <ButtonList/>
+      <div class="prosseguir">
+      <Link href="/Conta_com_modificacoes">
+      <input class='botao__prosseguir' type="submit" value="Prosseguir" />
+      </Link>
+      </div>
       <footer class="rodape">
       <p>Desenvolvido pelo grupo King of Code, 2023.</p>
       <Link class="integrantes" href="/Integrantes">

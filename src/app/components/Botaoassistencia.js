@@ -1,7 +1,7 @@
 'use client'
-import React from 'react';
-import styled from 'styled-components';
 
+import React, { useState } from 'react';
+import styled from 'styled-components';
 
 const Button = styled.button`
   display: flex;
@@ -36,6 +36,8 @@ const ButtonImage = styled.img`
 `;
 
 function ButtonList() {
+  const [selectedButtons, setSelectedButtons] = useState([]);
+
   const buttons = [
     {
       text: 'Estava andando e parou',
@@ -79,15 +81,33 @@ function ButtonList() {
     },
   ];
 
+  const handleButtonClick = (buttonIndex) => {
+    // Verifica se o botão já está selecionado
+    const index = selectedButtons.indexOf(buttonIndex);
+    if (index > -1) {
+      // Remove da lista se já estiver selecionado
+      const newSelectedButtons = [...selectedButtons];
+      newSelectedButtons.splice(index, 1);
+      setSelectedButtons(newSelectedButtons);
+    } else {
+      // Adiciona à lista se não estiver selecionado
+      setSelectedButtons([...selectedButtons, buttonIndex]);
+    }
+  };
+
   return (
     <div>
       {buttons.map((button, index) => (
-        <a key={index} href={button.link}>
-          <Button>
-            <ButtonImage src={button.imageSrc} alt={button.text} />
-            {button.text}
-          </Button>
-        </a>
+        <Button
+          key={index}
+          style={{
+            backgroundColor: selectedButtons.includes(index) ? 'lightblue' : 'white',
+          }}
+          onClick={() => handleButtonClick(index)}
+        >
+          <ButtonImage src={button.imageSrc} alt={button.text} />
+          {button.text}
+        </Button>
       ))}
     </div>
   );

@@ -21,7 +21,6 @@ export default function Fotos() {
         </div>
         <div class="seletores__imagem">
         <SeletorImagem/>
-        <SeletorImagem/>
         </div>
         <footer class="rodape">
         <p>Desenvolvido pelo grupo King of Code, 2023.</p>

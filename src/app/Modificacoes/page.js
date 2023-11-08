@@ -18,6 +18,11 @@ export default function Pagina_modificacoes() {
       </div>
       <div>
     <Modificacoes/>
+    <div class="prosseguir">
+    <Link href="/Possivel_fotos">
+      <input class='botao__prosseguir' type="submit" value="Prosseguir" />
+      </Link>
+      </div>
       </div>
       <footer class="rodape">
       <p>Desenvolvido pelo grupo King of Code, 2023.</p>

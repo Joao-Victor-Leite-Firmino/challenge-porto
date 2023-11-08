@@ -19,6 +19,7 @@ padding: 0;}
 .h1{
     text-align: center;
     font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .titulo{
@@ -57,6 +58,7 @@ padding: 0;}
     display: flex;
     justify-content: center;
     padding-bottom: 2em;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .imagem__botao__azul{
@@ -81,6 +83,7 @@ padding: 0;}
     color: white;
     font-size: 15px;
     padding: 2em;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .rodape{
@@ -91,18 +94,21 @@ padding: 0;}
     color: white;
     font-size: 15px;
     padding: 2em;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .titulo__integrantes{
     display: flex;
     text-align: center;
     justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .integrantes {
     padding: 1em 0 0 0;
     text-decoration: none;
     color: white;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .link__logo{
@@ -115,6 +121,26 @@ padding: 0;}
     text-align: center;
     gap: 1em;
     margin: 13em 0 2em 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.prosseguir {
+    display: flex;
+    align-items: center;
+  justify-content: center;
+  padding: 2em 0;
+}
+
+.botao__prosseguir {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    background-color: #10aefb;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+    height: 50px;
 }
 
 .Botao__sim__nao{
@@ -131,7 +157,8 @@ padding: 0;}
     flex-direction: column;
     text-align: center;
     gap: 1em;
-    margin: 3em 0
+    margin: 3em 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .titulo__fotos {
@@ -139,7 +166,8 @@ padding: 0;}
     flex-direction: column;
     text-align: center;
     gap: 1em;
-    margin: 3em 0
+    margin: 3em 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .selecao__lados {
@@ -154,7 +182,8 @@ padding: 0;}
 }
 
 .seletores__imagem {
-    margin-bottom: 2em;
+    margin-top: 6em;
+    margin-bottom: 6em;
 }
 
 .identificador__guincho {
@@ -167,6 +196,7 @@ padding: 0;}
 .placa__acompanhamento{
     text-align: center;
     padding-bottom: 1em;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 @media screen and (min-width: 1280px) {
