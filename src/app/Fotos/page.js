@@ -2,6 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 import SeletorImagem from '../components/SeletorFotos';
+import styles from '../globals.css';
 
 
 export default function Fotos() {

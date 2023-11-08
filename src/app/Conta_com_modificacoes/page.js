@@ -3,6 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import BotaoSim from '../components/BotaoSim';
 import BotaoNao from '../components/BotaoNao';
+import styles from '../globals.css';
 
 
 export default function Conta_com_modificacoes() {

@@ -2,6 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Modificacoes from '../components/BotaoModificacao';
+import styles from '../globals.css';
 
 export default function Pagina_modificacoes() {
   return (

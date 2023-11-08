@@ -1,56 +1,52 @@
-import BotaoChamada from './components/BotaoChamada'
-import Link from 'next/link'
-import BotaoHist from './components/BotaoHistorico'
+'use client'
 
-export default function Home() {
+import { useState } from 'react';
+import styles from './LoginPage.module.css';
+import Link from 'next/link';
+
+const LoginPage = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    if (username === 'usuario' && password === 'senha') {
+      alert('Login bem sucedido!');
+    } else {
+      alert('Credenciais inválidas. Tente novamente.');
+    }
+  };
+
   return (
-    <main class="home">
-      <header class='cabecalho'>
-      <Link class="link__logo" href="/Home">
-        <img class='logo' src="porto-seguro-logo (1).png" alt="Logo Porto Seguro"/>
+    <div className={styles.container}>
+    <img src="porto-seguro-logo (1).png" alt="Logo Porto Seguro"/>
+      <h1>Login</h1>
+      <form className={styles.form} onSubmit={handleLogin}>
+        <label htmlFor="username">CPF:</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        /><br /><br />
+        <label htmlFor="password">Senha:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        /><br /><br />
+        <Link href="/Home">
+        <input type="submit" value="Login" />
         </Link>
-      </header>
-      <div class='h1'>
-        <h1 class="titulo">Olá usuário, selecione abaixo o veículo que precisa de assistência</h1>
-      </div>
-      <div class="veiculos">
-        <div class="imagem__placa">
-          <div class="carro">
-            <img src="truck 1.svg" alt="Carro"/>
-          </div>
-          <img class="placa" src="License Plate.svg" alt="Placa"/>
-        </div>
-        <p class="paragrafo">Vigência de 01/01/2023 a 31/12/2024</p>
-        <Link href="/Problemas">
-        <BotaoChamada class="botao__azul"
-        src="/ferramentinha.svg"/>
-        </Link>
-      <div class="botao__historico">
-        <BotaoHist/>
-      </div>
-    </div>
-    <div class="veiculos">
-        <div class="imagem__placa">
-          <div class="carro">
-            <img src="truck 1.svg" alt="Carro"/>
-          </div>
-          <img class="placa" src="License Plate.svg" alt="Placa"/>
-        </div>
-        <p class="paragrafo">Vigência de 01/01/2023 a 31/12/2024</p>
-        <Link href="/Problemas">
-        <BotaoChamada class="botao__azul"
-        src="/ferramentinha.svg"/>
-        </Link>
-      <div class="botao__historico">
-        <BotaoHist/>
-      </div>
-    </div>
-    <footer class="rodape">
-      <p>Desenvolvido pelo grupo King of Code, 2023.</p>
-      <Link class="integrantes" href="/Integrantes">
-        <h2>Integrantes</h2>
+      </form>
+      <Link href="/Cadastro">
+      <p>Ainda não tem cadastro? Cadastre-se aqui</p>
       </Link>
-    </footer>
-    </main>
-  )
-}
+    </div>
+  );
+};
+
+export default LoginPage;
