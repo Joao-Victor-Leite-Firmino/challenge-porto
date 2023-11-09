@@ -22,6 +22,11 @@ export default function Fotos() {
         <div class="seletores__imagem">
         <SeletorImagem/>
         </div>
+        <div class="prosseguir">
+    <Link href="/Acompanhamento">
+      <input class='botao__prosseguir' type="submit" value="Prosseguir" />
+      </Link>
+      </div>
         <footer class="rodape">
         <p>Desenvolvido pelo grupo King of Code, 2023.</p>
         <Link class="integrantes" href="/Integrantes">

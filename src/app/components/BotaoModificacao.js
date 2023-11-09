@@ -1,9 +1,11 @@
 'use client'
+
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import styles from '../globals.css';
+
 
 const Button = styled.button`
+  /* Estilos base do botão */
   display: flex;
   align-items: center;
   padding: 10px;
@@ -24,6 +26,7 @@ const Button = styled.button`
 `;
 
 const ButtonImage = styled.img`
+  /* Estilos da imagem do botão */
   width: 40%;
   height: 50px;
   margin-bottom: 5px;
@@ -36,6 +39,7 @@ const ButtonImage = styled.img`
 `;
 
 const Modal = styled.div`
+  /* Estilos do pop-up */
   display: ${props => (props.show ? 'block' : 'none')};
   position: fixed;
   top: 50%;
@@ -44,6 +48,27 @@ const Modal = styled.div`
   background: white;
   padding: 20px;
   border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  font-family: Arial;
+  border: 1px solid #000; 
+`;
+
+const InputStyled = styled.input`
+  /* Estilos para inputs */
+  margin-bottom: 10px;
+  padding: 8px;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+`;
+
+const SendButton = styled.button`
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #f0f0f0;
+  cursor: pointer;
 `;
 
 function Modificacoes() {
@@ -86,6 +111,11 @@ function Modificacoes() {
     setInputValue(event.target.value);
   };
 
+  const handleSendButtonClick = () => {
+    setShowModal(false);
+    // Lógica para enviar os dados do formulário
+  };
+
   return (
     <div>
       {buttons.map((button, index) => (
@@ -98,14 +128,14 @@ function Modificacoes() {
       ))}
       <Modal show={showModal}>
         <h2>{inputType}</h2>
-        <input
+        <InputStyled
           type={inputType === 'Número de eixos' ? 'number' : 'text'}
           placeholder={inputType === 'Carga' ? 'Peso da carga' : 'Tipo de carga'}
           value={inputValue}
           onChange={handleInputChange}
         />
-        <button onClick={() => setShowModal(false)}>Fechar</button>
-        {/* Adicionar lógica para manipular a entrada do peso e tipo de carga */}
+        <SendButton onClick={handleSendButtonClick}>Enviar</SendButton>
+        {/* Adicione a lógica para manipular a entrada do peso e tipo de carga */}
       </Modal>
     </div>
   );

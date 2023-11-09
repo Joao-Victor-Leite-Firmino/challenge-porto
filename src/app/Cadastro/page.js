@@ -5,10 +5,10 @@ import styles from '../CadastroPage.module.css';
 
 const CadastroPage = () => {
   const [nome, setNome] = useState('');
-  const [cpf, setcpf] = useState('');
-  const [veiculo, setveiculo] = useState('');
-  const [peso, setpeso] = useState('');
-  const [placa, setplaca] = useState('');
+  const [cpf, setCpf] = useState('');
+  const [veiculo, setVeiculo] = useState('');
+  const [peso, setPeso] = useState('');
+  const [placa, setPlaca] = useState('');
   const [senha, setSenha] = useState('');
   const [confirmarSenha, setConfirmarSenha] = useState('');
 
@@ -42,7 +42,7 @@ const CadastroPage = () => {
           id="cpf"
           name="cpf"
           value={cpf}
-          onChange={(e) => setcpf(e.target.value)}
+          onChange={(e) => setCpf(e.target.value)}
         /><br /><br />
         <label htmlFor="veiculo">Veículo:</label>
         <input
@@ -50,7 +50,7 @@ const CadastroPage = () => {
           id="veiculo"
           name="veiculo"
           value={veiculo}
-          onChange={(e) => setveiculo(e.target.value)}
+          onChange={(e) => setVeiculo(e.target.value)}
         /><br /><br />
         <label htmlFor="peso">Peso:</label>
         <input
@@ -58,7 +58,7 @@ const CadastroPage = () => {
           id="peso"
           name="peso"
           value={peso}
-          onChange={(e) => setpeso(e.target.value)}
+          onChange={(e) => setPeso(e.target.value)}
         /><br /><br />
         <label htmlFor="placa">Placa:</label>
         <input
@@ -66,7 +66,7 @@ const CadastroPage = () => {
           id="placa"
           name="placa"
           value={placa}
-          onChange={(e) => setplaca(e.target.value)}
+          onChange={(e) => setPlaca(e.target.value)}
         /><br /><br />
         <label htmlFor="senha">Senha:</label>
         <input
