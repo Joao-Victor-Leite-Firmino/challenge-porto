@@ -3,9 +3,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-
 const Button = styled.button`
-  /* Estilos base do botão */
+  /* Estilos dos botões */
   display: flex;
   align-items: center;
   padding: 10px;
@@ -26,7 +25,7 @@ const Button = styled.button`
 `;
 
 const ButtonImage = styled.img`
-  /* Estilos da imagem do botão */
+  /* Estilos das imagens dos botões */
   width: 40%;
   height: 50px;
   margin-bottom: 5px;
@@ -39,7 +38,7 @@ const ButtonImage = styled.img`
 `;
 
 const Modal = styled.div`
-  /* Estilos do pop-up */
+  /* Estilos dos pop-ups */
   display: ${props => (props.show ? 'block' : 'none')};
   position: fixed;
   top: 50%;
@@ -48,95 +47,110 @@ const Modal = styled.div`
   background: white;
   padding: 20px;
   border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 999;
-  font-family: Arial;
-  border: 1px solid #000; 
+  font-family: Arial, sans-serif;
 `;
 
 const InputStyled = styled.input`
-  /* Estilos para inputs */
-  margin-bottom: 10px;
-  padding: 8px;
+  /* Estilos dos inputs */
+  display: block;
   width: 100%;
-  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 15px;
   border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
 `;
 
 const SendButton = styled.button`
-  padding: 8px 16px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  background: #f0f0f0;
+  /* Estilos do botão Enviar */
+  padding: 10px 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: lightblue;
   cursor: pointer;
+  font-size: 18px;
 `;
 
 function Modificacoes() {
-  const [showModal, setShowModal] = useState(false);
-  const [inputValue, setInputValue] = useState('');
-  const [inputType, setInputType] = useState('');
+  const [showModalEixos, setShowModalEixos] = useState(false);
+  const [showModalCarga, setShowModalCarga] = useState(false);
+  const [showModalTipoCarga, setShowModalTipoCarga] = useState(false);
 
-  const buttons = [
-    {
-      text: 'Número de eixos',
-      imageSrc: 'truck 1.svg',
-      link: '/Possivel_fotos',
-      isInput: true,
-    },
-    {
-      text: 'Carga',
-      imageSrc: 'delivery-weighing 1.svg',
-      link: '/Possivel_fotos',
-      isInput: true,
-    },
-    {
-      text: 'Tipo de carga',
-      imageSrc: 'parcel 1.svg',
-      link: '/Possivel_fotos',
-      isInput: true,
-    },
-  ];
+  const [inputValueEixos, setInputValueEixos] = useState('');
+  const [inputValueCarga, setInputValueCarga] = useState('');
+  const [inputValueTipoCarga, setInputValueTipoCarga] = useState('');
 
-  const handleButtonClick = (buttonIndex) => {
-    if (buttons[buttonIndex].isInput) {
-      setShowModal(true);
-      setInputType(buttons[buttonIndex].text);
+  const handleEixosSubmit = () => {
+    if (!isNaN(inputValueEixos)) {
+      setShowModalEixos(false);
+      alert(`Número de eixos: ${inputValueEixos}`);
     } else {
-      setShowModal(false);
-      // Lógica para lidar com outras opções
+      alert('Por favor, insira um número válido para os eixos.');
     }
   };
 
-  const handleInputChange = (event) => {
-    setInputValue(event.target.value);
+  const handleCargaSubmit = () => {
+    setShowModalCarga(false);
+    alert(`Peso da carga: ${inputValueCarga}`)
   };
 
-  const handleSendButtonClick = () => {
-    setShowModal(false);
-    // Lógica para enviar os dados do formulário
+  const handleTipoCargaSubmit = () => {
+    setShowModalTipoCarga(false);
+    alert(`Tipo de carga: ${inputValueTipoCarga}`);
   };
 
   return (
     <div>
-      {buttons.map((button, index) => (
-        <div key={index}>
-          <Button onClick={() => handleButtonClick(index)}>
-            <ButtonImage src={button.imageSrc} alt={button.text} />
-            {button.text}
-          </Button>
-        </div>
-      ))}
-      <Modal show={showModal}>
-        <h2>{inputType}</h2>
-        <InputStyled
-          type={inputType === 'Número de eixos' ? 'number' : 'text'}
-          placeholder={inputType === 'Carga' ? 'Peso da carga' : 'Tipo de carga'}
-          value={inputValue}
-          onChange={handleInputChange}
-        />
-        <SendButton onClick={handleSendButtonClick}>Enviar</SendButton>
-        {/* Adicione a lógica para manipular a entrada do peso e tipo de carga */}
-      </Modal>
+      <div>
+        <Button onClick={() => setShowModalEixos(true)}>
+          <ButtonImage src="truck 1.svg" alt="Número de Eixos" />
+          Número de Eixos
+        </Button>
+        <Modal show={showModalEixos}>
+          <h2>Número de Eixos</h2>
+          <InputStyled
+            type="number"
+            placeholder="Insira o número de eixos"
+            value={inputValueEixos}
+            onChange={e => setInputValueEixos(e.target.value)}
+          />
+          <SendButton onClick={handleEixosSubmit}>Enviar</SendButton>
+        </Modal>
+      </div>
+
+      <div>
+        <Button onClick={() => setShowModalCarga(true)}>
+          <ButtonImage src="delivery-weighing 1.svg" alt="Carga" />
+          Peso da Carga
+        </Button>
+        <Modal show={showModalCarga}>
+          <h2>Peso da Carga</h2>
+          <InputStyled
+            type="text"  
+            placeholder="Insira o valor da carga"
+            value={inputValueCarga}
+            onChange={e => setInputValueCarga(e.target.value)}
+          />
+          <SendButton onClick={handleCargaSubmit}>Enviar</SendButton>
+        </Modal>
+      </div>
+
+      <div>
+        <Button onClick={() => setShowModalTipoCarga(true)}>
+          <ButtonImage src="parcel 1.svg" alt="Tipo de Carga" />
+          Tipo de Carga
+        </Button>
+        <Modal show={showModalTipoCarga}>
+          <h2>Tipo de Carga</h2>
+          <InputStyled
+            type="text"
+            placeholder="Insira o tipo de carga"
+            value={inputValueTipoCarga}
+            onChange={e => setInputValueTipoCarga(e.target.value)}
+          />
+          <SendButton onClick={handleTipoCargaSubmit}>Enviar</SendButton>
+        </Modal>
+      </div>
     </div>
   );
 }
