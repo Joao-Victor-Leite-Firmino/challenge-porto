@@ -14,7 +14,7 @@ export default function Problemas() {
       </div>
       <ButtonList/>
       <div class="prosseguir">
-      <Link href="/Conta_com_modificacoes">
+      <Link href="/Modificacoes">
       <input class='botao__prosseguir' type="submit" value="Prosseguir" />
       </Link>
       </div>

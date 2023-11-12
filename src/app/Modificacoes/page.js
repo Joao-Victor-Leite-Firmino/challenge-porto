@@ -14,7 +14,7 @@ export default function Pagina_modificacoes() {
       </header>
       <div class="titulo__modificacoes">
       <h1>Modificações</h1>
-      <h2>Qual é a modificação?</h2>
+      <h2>Cite as modificações do veículo</h2>
       </div>
       <div>
     <Modificacoes/>

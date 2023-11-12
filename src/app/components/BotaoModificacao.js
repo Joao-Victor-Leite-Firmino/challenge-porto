@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const Button = styled.button`
-  /* Estilos dos botões */
   display: flex;
   align-items: center;
   padding: 10px;
@@ -25,7 +24,6 @@ const Button = styled.button`
 `;
 
 const ButtonImage = styled.img`
-  /* Estilos das imagens dos botões */
   width: 40%;
   height: 50px;
   margin-bottom: 5px;
@@ -38,7 +36,6 @@ const ButtonImage = styled.img`
 `;
 
 const Modal = styled.div`
-  /* Estilos dos pop-ups */
   display: ${props => (props.show ? 'block' : 'none')};
   position: fixed;
   top: 50%;
@@ -51,7 +48,6 @@ const Modal = styled.div`
 `;
 
 const InputStyled = styled.input`
-  /* Estilos dos inputs */
   display: block;
   width: 100%;
   padding: 10px;
@@ -62,7 +58,6 @@ const InputStyled = styled.input`
 `;
 
 const SendButton = styled.button`
-  /* Estilos do botão Enviar */
   padding: 10px 20px;
   border: 1px solid black;
   border-radius: 5px;
@@ -71,14 +66,19 @@ const SendButton = styled.button`
   font-size: 18px;
 `;
 
+
+
 function Modificacoes() {
   const [showModalEixos, setShowModalEixos] = useState(false);
   const [showModalCarga, setShowModalCarga] = useState(false);
   const [showModalTipoCarga, setShowModalTipoCarga] = useState(false);
+  const [showModalTombado, setShowModalTombado] = useState(false);
 
   const [inputValueEixos, setInputValueEixos] = useState('');
   const [inputValueCarga, setInputValueCarga] = useState('');
   const [inputValueTipoCarga, setInputValueTipoCarga] = useState('');
+
+  const [isVeiculoTombado, setIsVeiculoTombado] = useState('');
 
   const handleEixosSubmit = () => {
     if (!isNaN(inputValueEixos)) {
@@ -90,13 +90,30 @@ function Modificacoes() {
   };
 
   const handleCargaSubmit = () => {
-    setShowModalCarga(false);
-    alert(`Peso da carga: ${inputValueCarga}`)
+    if (inputValueCarga.trim()) {
+      setShowModalCarga(false);
+      alert(`Peso da carga: ${inputValueCarga}`);
+    } else {
+      alert('Por favor, insira um valor válido para a carga.');
+    }
   };
 
   const handleTipoCargaSubmit = () => {
-    setShowModalTipoCarga(false);
-    alert(`Tipo de carga: ${inputValueTipoCarga}`);
+    if (inputValueTipoCarga.trim()) {
+      setShowModalTipoCarga(false);
+      alert(`Tipo de carga: ${inputValueTipoCarga}`);
+    } else {
+      alert('Por favor, insira um valor válido para o tipo de carga.');
+    }
+  };
+
+  const handleTombadoSubmit = () => {
+    if (isVeiculoTombado) {
+      setShowModalTombado(false);
+      alert(`Veículo tombado? Resposta: ${isVeiculoTombado}`);
+    } else {
+      alert('Por favor, selecione uma opção para a condição do veículo.');
+    }
   };
 
   return (
@@ -149,6 +166,35 @@ function Modificacoes() {
             onChange={e => setInputValueTipoCarga(e.target.value)}
           />
           <SendButton onClick={handleTipoCargaSubmit}>Enviar</SendButton>
+        </Modal>
+      </div>
+
+      <div>
+        <Button onClick={() => setShowModalTombado(true)}>
+          <ButtonImage src="caminhao-_2_.svg" alt="Caminhão tombado?" />
+          Veículo tombado?
+        </Button>
+        <Modal show={showModalTombado}>
+          <h2>Veículo tombado?</h2>
+          <label>
+            <input
+              type="radio"
+              value="Sim"
+              checked={isVeiculoTombado === 'Sim'}
+              onChange={() => setIsVeiculoTombado('Sim')}
+            />
+            Sim
+          </label>
+          <label>
+            <input
+              type="radio"
+              value="Não"
+              checked={isVeiculoTombado === 'Não'}
+              onChange={() => setIsVeiculoTombado('Não')}
+            />
+            Não
+          </label>
+          <SendButton onClick={handleTombadoSubmit}>Enviar</SendButton>
         </Modal>
       </div>
     </div>

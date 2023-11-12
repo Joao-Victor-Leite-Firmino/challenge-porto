@@ -1,5 +1,8 @@
-// pages/CadastroPage.js
 'use client'
+
+import Link from 'next/link';
+
+// pages/CadastroPage.js
 import { useState } from 'react';
 import styles from '../CadastroPage.module.css';
 
@@ -84,7 +87,9 @@ const CadastroPage = () => {
           value={confirmarSenha}
           onChange={(e) => setConfirmarSenha(e.target.value)}
         /><br /><br />
+        <Link href="/">
         <input type="submit" value="Cadastrar" />
+        </Link>
       </form>
     </div>
   );
