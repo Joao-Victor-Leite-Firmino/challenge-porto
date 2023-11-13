@@ -14,7 +14,7 @@ const Button = styled.label`
   width: 49.5%;
   border: 2px dashed #ccc;
   border-radius: 5px;
-  padding: 10px;
+  padding: 10px 55px;
 
   @media screen and (min-width: 1280px) {
     width: 30%;
